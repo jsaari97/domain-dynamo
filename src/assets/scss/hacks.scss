@@ -1,0 +1,14 @@
+.form-container {
+  height: 90vh;
+  @include for-phone-only() {
+    justify-content: center;
+  }
+}
+button:focus,
+a:focus {
+  outline: 0;
+}
+* { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+html {
+  touch-action: manipulation;
+}

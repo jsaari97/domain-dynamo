@@ -1,0 +1,83 @@
+.results {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  flex: 1;
+}
+.suggestion-container {
+  flex: 1 0 100%;
+}
+.suggestion {
+  text-align: center;
+  font-size: 30px;
+  margin: 40px 0 56px;
+  @include for-phone-only() {
+    margin: 72px 0 96px;
+  }
+}
+
+.res-icon {
+  @include box-shadow(1);
+  @include size(72px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 72px;
+  margin-bottom: 4px;
+  transition: transform 0.2s cubic-bezier(.34,-0.56,.4,1.68);
+  @include for-phone-only() {
+    @include size(96px);
+  }
+  &:active {
+    transform: scale(.85) rotate(-2deg);
+  }
+
+  svg {
+    @include size(24px);
+    fill: #fff;
+    @include for-phone-only() {
+      @include size(32px);
+    }
+  }
+
+  &.like {
+    background: $primary;
+    margin-right: 48px;
+    @include for-phone-only() {
+      margin-right: 0;
+    }
+  }
+  &.dislike {
+    background: $contemporary;
+    margin-left: 48px;
+    @include for-phone-only() {
+      margin-left: 0;
+    }
+  }
+  &.undo {
+    @include position(absolute, null null 68px 56px);
+    @include size(48px);
+    background: #fff;
+    margin: 0;
+    @include for-phone-only() {
+      bottom: 96px;
+      left: 16px;
+      @include size(32px);
+
+      svg {
+        @include size(16px);
+      }
+    }
+
+    svg {
+      @include size(20px);
+      fill: #666;
+    }
+  }
+}
+.suggestion-count {
+  @include position(absolute, null 16px 16px null);
+  margin: 0;
+  opacity: .5;
+}

@@ -1,0 +1,59 @@
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+html,
+body {
+  height: 100%;
+}
+body,
+input[type="text"] {
+  color: $fontcolor;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include for-phone-only() {
+    overflow-x: hidden;
+  }
+}
+button {
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.35);
+  font-family: 'Raleway', Verdana, Geneva, Tahoma, sans-serif;
+  color: #fff;
+  background: #03A9F4;
+  border: 0;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 20px;
+  font-weight: 700;
+
+  &[disabled] {
+    background: #dedede;
+    color: #666;
+    // box-shadow: none;
+  }
+}
+.back {
+  @include position(fixed, 0 null null 0);
+  @include size(100%);
+  z-index: -2;
+  transform: scale(1.05);
+  background: url(https://source.unsplash.com/collection/157820/640x480/daily) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  filter: grayscale(25%) blur(10px);
+}
+.copyright {
+  @include position(fixed, null null 16px 50%);
+  @include transform(translateX(-50%));
+  color: #fff;
+  opacity: .5;
+  z-index: -1;
+  @include for-phone-only() {
+    margin-bottom: 0;
+  }
+}
